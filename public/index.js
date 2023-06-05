@@ -78,7 +78,6 @@ jQuery(document).ready(function() {
                                 cell6.innerHTML = data.trackNum; 
                             }
 
-                            //here
                             var opt = document.createElement ("option");
                             opt.innerHTML = data.name; 
                             opt.value = data.name; 

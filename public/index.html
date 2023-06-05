@@ -35,11 +35,13 @@
         
         </table> 
     </div>
-        <form ref='uploadForm'
-		id='uploadForm'
-      action='/upload'
-      method='post'
-      encType="multipart/form-data">
+        <form 
+            ref='uploadForm'
+		    id='uploadForm'
+            action='/upload'
+            method='post'
+            encType="multipart/form-data"
+        >
       <div class="form-group">
       	<input type="file" name="uploadFile" class="btn btn-secondary">
       	<input type='submit' value='Upload' class="btn btn-secondary">
@@ -57,51 +59,11 @@
         </table> 
     </div>
 
-<!--
-    <label for = "files">All Valid Files</label>
-    <select name = "files" id = "files">
-        <option></option>
-        <option value = "simple.gpx">simple.gpx</option>
-    </select>
-
-    <div style = "height:150px; width:100%; overflow-x:auto;" id = "divTable2">
-        <table id = "table2" border = "1" style = "height:100%; width: 100%"">
-        
-        </table> 
-    </div>
-    
-            document.getElementById('removeRow').onclick = function(){
-                if(table.rows.length > 1){
-                    table.deleteRow(-1); 
-                    document.getElementById('files').remove(document.getElementById('files').length - 1); 
-                }
-            }
-
-            document.getElementById('files').onchange = function(){
-                if (document.getElementById('files').selectedIndex != 0){
-                    console.log (document.getElementById('files').value); 
-                    console.log (document.getElementById('files').selectedIndex);ee
-                }
-            }
-
-        }); 
-    </script> 
-
 -->
 
     <hr>
     <div id="blah">I am blah</div>
     <hr>
-    <form ref='someform'
-          id='someform'>
-          <div class="form-group">
-                <label for="entryBox">Last Name</label>
-                <input type="text" class="form-control" id="entryBox" value="Value" placeholder="Placeholder">
-          </div>
-        <div class="form-group">
-            <input type='submit' class="btn btn-secondary">
-        </div>
-    </form>
 
     <!-- Leave me at the bottom of body -->
     <script src="/index.js"></script>

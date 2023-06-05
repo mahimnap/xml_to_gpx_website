@@ -1,8 +1,5 @@
 /**
- * @file LinkedListAPI.h
- * @author CIS*2750 S18 (based on the ListADT from CIS*2520, S17)
- * @date May 2018
- * @brief File containing the function definitions of a doubly linked list
+ * @author Mahimna Pyakruyal
  */
 
 #ifndef _LIST_API_

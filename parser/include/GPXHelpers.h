@@ -1,13 +1,5 @@
 /**
- * Name: Mahimna Pyakuryal (mpyakury)
- * Student ID: 1014826
- * Used code from following examples provided by professor:
- *      libXmlExample.c 
- *      StructListDemo.c
- * For A2 I used the following links provided by the professor:
- *      -> http://www.xmlsoft.org/examples/tree2.c
- *      -> http://knol2share.blogspot.com/2009/05/validate-xml-against-xsd-in-c.html
- *      -> https://www.movable-type.co.uk/scripts/latlong.html
+ * @author: Mahimna Pyakuryal
  */
 
 #ifndef GPX_HELPERS_H

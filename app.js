@@ -26,21 +26,21 @@ var fileDir = "./uploads/";
 const fs = require('fs');
 const JavaScriptObfuscator = require('javascript-obfuscator');
 
-// Important, pass in port as in `npm run dev 1234`, do not change
+// Important, pass in port as in `npm run dev 1234`
 const portNum = process.argv[2];
 
-// Send HTML at root, do not change
+// Send HTML at root
 app.get('/',function(req,res){
   res.sendFile(path.join(__dirname+'/public/index.html'));
 });
 
-// Send Style, do not change
+// Send Style
+//need to restyle css to make more pretty on frontend
 app.get('/style.css',function(req,res){
-  //Feel free to change the contents of style.css to prettify your Web app
   res.sendFile(path.join(__dirname+'/public/style.css'));
 });
 
-// Send obfuscated JS, do not change
+// Send obfuscated JS
 app.get('/index.js',function(req,res){
   fs.readFile(path.join(__dirname+'/public/index.js'), 'utf8', function(err, contents) {
     const minimizedContents = JavaScriptObfuscator.obfuscate(contents, {compact: true, controlFlowFlattening: true});
@@ -67,7 +67,7 @@ app.post('/upload', function(req, res) {
     }
   }
 
-  // Use the mv() method to place the file somewhere on your server
+  // Use the mv() method to place the file in uploads directory on server-side
   uploadFile.mv('uploads/' + uploadFile.name, function(err) {
     if(err) {
       return res.status(500).send(err);
@@ -87,8 +87,6 @@ app.get('/uploads/:name', function(req , res){
     }
   });
 });
-
-//******************** Your code goes here ******************** 
 
 /**
  * only test for validity when creating or modifying a GPX file 
@@ -142,16 +140,6 @@ app.get ('/emdPoint5', function(req, res){
   }
   
 });
-
-//Sample endpoint
-/*app.get('/endpoint1', function(req , res){ //responds to /endpoint1 -> ajax in index.js 
-  let retStr = req.query.data1 + " " + req.query.data2; //somethingElse will be key, this merging of the data in object will be the value 
-  res.send(
-    {
-      somethingElse: retStr //because expect type is JSON 
-    }
-  );
-});*/
 
 
 
