@@ -15,8 +15,7 @@
 #include <libxml/xmlschemastypes.h>
 #include "LinkedListAPI.h"
 
-//M_PI is not declared in the C standard, so we declare it manually
-//We will need it for A2
+//M_PI is not declared in the C standard, so it's declared manually
 #ifndef M_PI
     #define M_PI 3.14159265358979323846
 #endif
@@ -27,7 +26,7 @@ typedef struct  {
     //GPXData name.  Must not be an empty string.
 	char 	name[256];
 
-    //GPXData value.  We use a C99 flexible array member, which we will discuss in class.
+    //GPXData value. Using a C99 flexible array member
 	//Must not be an empty string
 	char	value[]; 
 } GPXData;
@@ -43,7 +42,7 @@ typedef struct {
     double latitude;
 
     //Additional waypoint data - i.e. children of the GPX waypoint other than <name>.  
-    //We will assume that all waypoint children have no children of their own
+    //Assuming that all waypoint children have no children of their own
     //This can be elevation, time, etc.. Note that while the element <name> can be a child of the waypoint node,
     //the name already has its own dedicated filed in the Waypoint sruct - so do not place the name in this list
     //All objects in the list will be of type GPXData.  It must not be NULL.  It may be empty.
@@ -114,10 +113,6 @@ typedef struct {
     List* tracks;
 } GPXdoc;
 
-
-
-//A1
-
 /* Public API - main */
 
 /** Function to create an GPX object based on the contents of an GPX file.
@@ -184,10 +179,6 @@ Track* getTrack(const GPXdoc* doc, char* name);
 Route* getRoute(const GPXdoc* doc, char* name);
 
 
-
-/* ******************************* A2 functions  - MUST be implemented *************************** */
-
-
 //Module 1
 
 /** Function to create an GPX object based on the contents of an GPX file.
@@ -228,9 +219,6 @@ bool validateGPXDoc(GPXdoc* doc, char* gpxSchemaFile);
  	fileName - the name of the output file
  **/
 bool writeGPXdoc(GPXdoc* doc, char* fileName);
-
-
-//Module 2
 
 /** Function that returns the length of a Route
  *@pre Route object exists, is not null, and has not been freed
@@ -324,11 +312,7 @@ List* getRoutesBetween(const GPXdoc* doc, float sourceLat, float sourceLong, flo
 */
 List* getTracksBetween(const GPXdoc* doc, float sourceLat, float sourceLong, float destLat, float destLong, float delta);
 
-
-//Module 3
-
-
-/** Function to converting a Track into a JSON string
+/** Function to convert a Track into a JSON string
  *@pre Track is not NULL
  *@post Track has not been modified in any way
  *@return A string in JSON format
@@ -367,10 +351,6 @@ char* trackListToJSON(const List *list);
  *@param event - a pointer to a GPXdoc struct
  **/
 char* GPXtoJSON(const GPXdoc* gpx);
-
-
-
-// ***************************** Bonus A2 functions ********************************
 
 /** Function to adding an Waypont struct to an existing Route struct
  *@pre arguments are not NULL
@@ -416,7 +396,7 @@ Route* JSONtoRoute(const char* gpxString);
 
 
 
-/* ******************************* List helper functions  - MUST be implemented *************************** */
+/* ******************************* helper functions *************************** */
 
 void deleteGpxData( void* data);
 char* gpxDataToString( void* data);
@@ -437,8 +417,6 @@ int compareTrackSegments(const void *first, const void *second);
 void deleteTrack(void* data);
 char* trackToString(void* data);
 int compareTracks(const void *first, const void *second);
-
-/* added for a3*/
 
 char *otherToJSON (const GPXData *data);
 char *otherListToJSON (const List *list);

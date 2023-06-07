@@ -93,6 +93,8 @@ app.get('/uploads/:name', function(req , res){
  * otherwise, just use "createGPX() from C lib to convert gpx file to gpx structure for internal use"
  */
 
+//TODO: rename endpoints to represent functionality
+
 var foundFiles = null; 
 
 //endpoint3
@@ -140,9 +142,6 @@ app.get ('/emdPoint5', function(req, res){
   }
   
 });
-
-
-
 
 app.listen(portNum);
 console.log('Running app at localhost: ' + portNum);
