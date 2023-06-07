@@ -105,7 +105,7 @@ app.get ('/endpoint3', function (req, res){
     res.send(strVal); 
 });
 
-//accept index from caller, return a GSON string that can fill the table of files in GUI 
+//accept index from caller, return a JSON string that can fill the table of files in GUI 
 app.get('/endpoint2', function (req, res){
     foundFiles =fs.readdirSync (fileDir);
 
@@ -131,7 +131,7 @@ app.get('/endpoint2', function (req, res){
 });
 
 //receive file name from client, pass back two strings with track/route lists -> maybe just one actually 
-app.get ('/emdPoint5', function(req, res){
+app.get ('/endPoint5', function(req, res){
   var returnStr = sharedLib.listRouteJSON (req.query.dataIdx);
 
   if (returnStr == NULL){
