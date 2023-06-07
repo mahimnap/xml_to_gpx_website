@@ -28,11 +28,11 @@ jQuery(document).ready(function() {
                         dataIdx: i,
                     },
                     success: function (data){
-                        if (data == null){//this data is literally GSON strings for thee table 
+                        if (data == null){//this data is JSON strings for the table 
                             //deleted file
                         }
                         else {
-                           //document.getElementById('addRow').onclick = function(){
+                            //document.getElementById('addRow').onclick = function(){
                             //let row = table.insertRow(-1) ; //create teh entire row for a file 
 
                             var table = document.getElementById ('table'); 
